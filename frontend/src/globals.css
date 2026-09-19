@@ -565,16 +565,36 @@ body.kbd .tour-nav-item:focus-visible { outline: 2px solid #222; outline-offset:
 @media (max-width: 1128px) {
   .container, .subnav-inner { padding: 0 40px; }
   .site-header { padding: 0 40px; }
-  .content-cols { grid-template-columns: 1fr; }
-  .content-right { display: none; }
+  .content-cols { grid-template-columns: 1fr; gap: 48px; }
+  .content-right { display: block; }
+  .booking-sticky { position: static; max-width: 500px; margin: 0 auto; }
   .tour-nav { grid-template-columns: repeat(4, 1fr); }
   .tour-room { grid-template-columns: 1fr; }
   .tour-room-head { position: static; }
-  .review-grid { grid-template-columns: 1fr; gap: 30px; }
-  .ratings-row { grid-template-columns: 1fr 1fr; }
-  .rating-col + .rating-col { border-left: none; }
-  .rating-col { padding: 10px 0; }
-  .host-cols { grid-template-columns: 1fr; }
-  .similar-card { flex-basis: calc((100% - 40px) / 3); }
+  .host-cols { grid-template-columns: 1fr; gap: 32px; }
+}
+
+@media (max-width: 768px) {
+  .container, .subnav-inner, .site-header { padding: 0 24px; }
+  .header-inner { grid-template-columns: auto 1fr; gap: 16px; }
+  .header-nav { display: none; }
+  .searchbar { width: 100%; max-width: 100%; }
+  .title-row { flex-direction: column; align-items: flex-start; padding: 24px 0 16px; gap: 12px; }
+  .title-actions { width: 100%; justify-content: space-between; }
+  .listing-title { font-size: 24px; line-height: 28px; }
+  .hero-grid { grid-template-columns: 1fr; grid-template-rows: auto; aspect-ratio: 4/3; }
+  .hero-cell:first-child { grid-row: 1; }
+  .hero-cell:not(:first-child) { display: none; }
+  .sleep-grid, .amenity-grid { grid-template-columns: 1fr; }
+  .cal-months { grid-template-columns: 1fr; gap: 32px; }
+  .reviews-hero .reviews-score .num { font-size: 72px; }
+  .reviews-hero .reviews-score img { height: 80px; }
+  .ratings-row { grid-template-columns: 1fr; padding: 0 0 24px; }
+  .rating-col { padding: 12px 0; border-left: none !important; border-bottom: 1px solid var(--line-soft); }
+  .rating-col:last-child { border-bottom: none; }
+  .review-grid { grid-template-columns: 1fr; gap: 24px; }
+  .cohosts { grid-template-columns: 1fr 1fr; }
   .ttk-grid { grid-template-columns: 1fr; gap: 24px; }
+  .similar-card { flex: 0 0 calc((100% - 20px) / 2); }
+  .booking-sticky { max-width: 100%; }
 }
